@@ -4,6 +4,8 @@ go 1.16
 
 require (
 	github.com/Shopify/sarama v1.28.0 // indirect
+	github.com/aws/aws-sdk-go v1.37.25 // indirect
+	github.com/go-sql-driver/mysql v1.5.0 // indirect
 	github.com/golang/snappy v0.0.3 // indirect
 	github.com/klauspost/compress v1.11.12 // indirect
 	github.com/segmentio/kafka-go v0.4.10 // indirect
