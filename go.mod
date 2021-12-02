@@ -3,10 +3,25 @@ module github.com/mytrix-technology/mylibgo
 go 1.16
 
 require (
-	github.com/Shopify/sarama v1.28.0 // indirect
-	github.com/golang/snappy v0.0.3 // indirect
-	github.com/klauspost/compress v1.11.12 // indirect
-	github.com/segmentio/kafka-go v0.4.10 // indirect
-	golang.org/x/crypto v0.0.0-20210220033148-5ea612d1eb83 // indirect
-	golang.org/x/net v0.0.0-20210226172049-e18ecbb05110 // indirect
+	github.com/apex/log v1.9.0
+	github.com/aws/aws-sdk-go v1.42.14
+	github.com/buraksezer/olric v0.4.0
+	github.com/coocood/freecache v1.2.0
+	github.com/dongri/phonenumber v0.0.0-20210805005246-531b48ff7473
+	github.com/go-kit/kit v0.12.0
+	github.com/go-sql-driver/mysql v1.6.0
+	github.com/gomodule/redigo v1.8.5
+	github.com/jmoiron/sqlx v1.3.4
+	github.com/julienschmidt/httprouter v1.3.0
+	github.com/leekchan/accounting v1.0.0
+	github.com/lib/pq v1.2.0
+	github.com/mailgun/groupcache/v2 v2.2.1
+	github.com/rs/xid v1.3.0
+	github.com/stretchr/testify v1.7.0
+	github.com/tj/assert v0.0.3
+	github.com/ua-parser/uap-go v0.0.0-20211112212520-00c877edfe0f
+	github.com/unidoc/unidoc v2.2.0+incompatible
+	golang.org/x/net v0.0.0-20210917221730-978cfadd31cf
+	gopkg.in/guregu/null.v4 v4.0.0
+	gopkg.in/yaml.v2 v2.4.0
 )
