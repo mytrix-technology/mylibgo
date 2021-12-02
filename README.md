@@ -1,2 +1,2 @@
 # mylibgo
-Library Helper Center usng golang environment
+Library Helper Center using golang environment
