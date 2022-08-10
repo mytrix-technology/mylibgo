@@ -1,10 +1,10 @@
 package breaker
 
 import (
+	"context"
 	"fmt"
 	"github.com/afex/hystrix-go/hystrix"
 	"github.com/eapache/go-resiliency/retrier"
-	"github.com/hashicorp/go.net/context"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 	"io/ioutil"
@@ -91,6 +91,7 @@ func CallWithRetries(req *http.Request, output chan []byte) error {
 
 // PerformHTTPRequestCircuitBreaker performs the supplied http.Request within a circuit breaker.
 func PerformHTTPRequestCircuitBreaker(ctx context.Context, breakerName string, req *http.Request) ([]byte, error) {
+	//func PerformHTTPRequestCircuitBreaker(ctx context.Context, breakerName string, req *http.Request) ([]byte, error) {
 	output := make(chan []byte, 1)
 	errors := hystrix.Go(breakerName, func() error {
 		err := CallWithRetries(req, output)
