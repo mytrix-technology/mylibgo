@@ -8,12 +8,12 @@ import (
 	"io"
 )
 
-/* Generate256BitRandomHexKey will generate a random 256 bit key encoded in base16 string */
+// Generate256BitRandomHexKey will generate a random 256 bit key encoded in base16 string */
 func Generate256BitRandomHexKey() string {
 	return EncodeHex(generate256BitRandomKey())
 }
 
-/* Generate256BitRandomBase64Key will generate a random 256 bit key encoded in base64 string */
+// Generate256BitRandomBase64Key will generate a random 256 bit key encoded in base64 string */
 func Generate256BitRandomBase64Key() string {
 	return EncodeBASE64(generate256BitRandomKey())
 }
@@ -78,7 +78,7 @@ func Encrypt(data []byte, byteKey []byte) ([]byte, error) {
 
 	//IV needs to be unique, but doesn't have to be secure.
 	//It's common to put it at the beginning of the ciphertext.
-	cipherText := make([]byte, aes.BlockSize + len(data))
+	cipherText := make([]byte, aes.BlockSize+len(data))
 	iv := cipherText[:aes.BlockSize]
 	if _, err = io.ReadFull(rand.Reader, iv); err != nil {
 		return nil, err
@@ -101,7 +101,7 @@ func Decrypt(encryptedByte []byte, byteKey []byte) ([]byte, error) {
 		return nil, fmt.Errorf("encryptedByte block size is less than %d bytes", aes.BlockSize)
 	}
 
-	decryptedByte := make([]byte, len(encryptedByte) - aes.BlockSize)
+	decryptedByte := make([]byte, len(encryptedByte)-aes.BlockSize)
 
 	iv := encryptedByte[:aes.BlockSize]
 	encryptedByte = encryptedByte[aes.BlockSize:]
@@ -111,4 +111,3 @@ func Decrypt(encryptedByte []byte, byteKey []byte) ([]byte, error) {
 
 	return decryptedByte, nil
 }
-
